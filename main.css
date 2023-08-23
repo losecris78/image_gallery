@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+header{
+    background-color:#5f27cd ;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;
+    border-bottom:16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+header button{
+    margin-left: 16px;
+}
+form{
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+form h2{
+    margin-bottom: 16px;
+}
+input, button{
+    padding: 8px;
+}
+button{
+    background-color: aquamarine;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#fff;
+}
+#btn_cancelar{
+    background-color: red;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*esta instrucción divide la página, necesita de la ul li img width 100%
+ para que las imágenes se muestren al 100% en ese espacio del 25%*/
+ul li{
+    max-width: 25%;
+    list-style: none;
+    position: relative;
+    max-height: 280px;
+    overflow-y: hidden;
+    /*este parámetro oculta el sobrante en eje y dentro del contenedor*/
+}
+ul li img{
+    width: 100%;
+}
+/* al crear la clase estamos padronizando la disposición de todas las imágenes
+colocamos position absolute  y hay que colocar en el lugar que queremos, después hay que poner en li position relative, para
+que este texto quede encima de la imagen.
+ -Opacity hará que desaparezca mi letrero, al trabajar con hover puedo hacer que aparezca de nuevo.
+
+*/
+
+.overlay_image{
+    padding: 16px;
+    background-color: rgba(0,0,0, 0.7);
+    position:absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    opacity:0;
+    transition:all ease .5s;
+
+}
+.overlay_image a{
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+ul li:hover .overlay_image{
+    opacity:1;
+}
